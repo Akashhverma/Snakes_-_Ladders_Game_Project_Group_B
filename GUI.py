@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import Canvas, simpledialog, messagebox
 from PIL import Image, ImageTk
 import random
-
+import os
 
 class SnakeLadderGUI:
     def __init__(self, root):
@@ -64,9 +64,10 @@ class SnakeLadderGUI:
         quit_btn.place(relx=0.98, rely=0.02, anchor="ne")
 
         # Load the board image
-        board_img = Image.open(
-            r"C:\Users\akash.verma\OneDrive - VCTI\Desktop\STUDY\Python-workspace\Python_session\Snakes&Ladders_project\snakes&ladders_board.png"
-        ).resize((500, 500))
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        board_path =os.path.join(current_dir, "snakes&ladders_board.png")
+
+        board_img = Image.open(board_path).resize((500, 500))
         self.board_photo = ImageTk.PhotoImage(board_img)
 
         # Canvas for the board

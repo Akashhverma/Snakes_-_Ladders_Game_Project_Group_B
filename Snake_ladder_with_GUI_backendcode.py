@@ -1,10 +1,16 @@
 import random
 import winsound
+import os
 
 class SoundManager:
-    DICE_SOUND = r"C:\Users\akash.verma\OneDrive - VCTI\Desktop\STUDY\Python-workspace\Python_session\Snakes&Ladders_project\dice.wav"
-    LADDER_SOUND = r"C:\Users\akash.verma\OneDrive - VCTI\Desktop\STUDY\Python-workspace\Python_session\Snakes&Ladders_project\ladder.wav"
-    SNAKE_SOUND = r"C:\Users\akash.verma\OneDrive - VCTI\Desktop\STUDY\Python-workspace\Python_session\Snakes&Ladders_project\snake.wav"
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+
+    DICE_SOUND = os.path.join(current_dir, "dice.wav")
+   
+    LADDER_SOUND =os.path.join(current_dir, "ladder.wav")
+    SNAKE_SOUND = os.path.join(current_dir, "snake.wav")
 
     @staticmethod
     def play(path):
